@@ -16,6 +16,14 @@ void prompt(void);
 void user_input(char *command, size_t size);
 void exec_command(const char *command);
 void free_buffers(char **buf);
+char** parse_args(char* command);
+int _isAlpha(char c);
+int checkRequirements(char *str);
+char *printError(void);
+char *tokenization(char *str);
+void copyString(char s[], char *s2);
+char *handleErrors(char *str);
+
 /**
  * struct flags - handle flags
  * @interactive: mode of the shell
