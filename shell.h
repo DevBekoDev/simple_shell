@@ -16,7 +16,7 @@ void prompt(void);
 void user_input(char *command, size_t size);
 void exec_command(const char *command);
 void free_buffers(char **buf);
-char** parse_args(char* command);
+char **parse_args(char *command);
 int _isAlpha(char c);
 int checkRequirements(char *str);
 char *printError(void);

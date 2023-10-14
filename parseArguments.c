@@ -6,20 +6,24 @@
  * Return: char
  */
 
-char** parse_args(char* command) {
-  char** args = malloc(sizeof(char*) * 10);
-  if (args == NULL) {
-    perror("malloc");
-    exit(1);
-  }
+char **parse_args(char *command)
+{
+	char **args = malloc(sizeof(char *) * 10);
+	char *tokentemp = NULL;
+	int argc = 0;
 
-  char* token = strtok(command, " ");
-  int argc = 0;
-  while (token != NULL && argc < 10) {
-    args[argc++] = token;
-    token = strtok(NULL, " ");
-  }
-  args[argc] = NULL;
+	if (args == NULL)
+	{
+		perror("malloc");
+		exit(1);
+	}
 
-  return args;
+	tokentemp = strtok(command, " ");
+	while (tokentemp != NULL && argc < 10)
+	{
+		args[argc++] = tokentemp;
+		tokentemp = strtok(NULL, " ");
+	}
+	args[argc] = NULL;
+	return (args);
 }
