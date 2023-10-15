@@ -8,12 +8,14 @@
 int main(void)
 {
 	char command[128];
+	char **args;
 
 	while (1)
 	{
 		prompt();
 		user_input(command, sizeof(command));
-		exec_command(command);
+		args = parse_args(command);
+		exec_command(args);
 	}
 	return (0);
 }

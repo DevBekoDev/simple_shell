@@ -5,7 +5,7 @@
  * @command: entered by the user
  */
 
-void exec_command(const char *command)
+void exec_command(char **command)
 {
 	pid_t child_pid = fork();
 
@@ -16,7 +16,7 @@ void exec_command(const char *command)
 	}
 	else if (child_pid == 0)
 	{
-		execlp(command, command, (char *)NULL);
+		execve(command[0], command, (char **) NULL);
 		perror("execlp");
 		exit(EXIT_FAILURE);
 	}
