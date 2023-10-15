@@ -18,7 +18,7 @@ void exec_command(char **command);
 void free_buffers(char **buf);
 char **parse_args(char *command);
 char *printError(void);
-
+int str_cmp(const char *s1, const char *s2);
 /**
  * struct flags - handle flags
  * @interactive: mode of the shell
