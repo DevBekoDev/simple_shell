@@ -2,27 +2,27 @@
 
 /**
  * exec_command - execute commands
- * @command: entered by the user
+ * @cmd: entered by the user
+ * @cp: user input
  */
 
-void exec_command(char **command)
+void exec_command(char *cp, char **cmd)
 {
-	pid_t child_pid = fork();
+	pid_t child_pid;
+	int status;
+	char **env = environ;
 
-	if (child_pid == -1)
+	child_pid = fork();
+	if (child_pid < 0)
+		perror(cp);
+	if (child_pid == 0)
 	{
-		perror("fork");
-		exit(EXIT_FAILURE);
-	}
-	else if (child_pid == 0)
-	{
-		execve(command[0], command, (char **) NULL);
-		perror("execlp");
-		exit(EXIT_FAILURE);
+		execve(cp, cmd, env);
+		perror(cp);
+		free(cp);
+		free_buffers(cmd);
+		exit(98);
 	}
 	else
-	{
-
-		wait(NULL);
-	}
+		wait(&status);
 }
