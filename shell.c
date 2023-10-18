@@ -20,9 +20,9 @@ int main(int ac, char **av, char *envp[])
 	signal(SIGINT, handle_ctrl_c);
 	while (1)
 	{
-		/* free_buffers(command) */
-		/* free_buffers(paths); */
-		/* free(pathcommand); */
+		free_buffers(command);
+		free_buffers(paths);
+		free(pathcommand);
 		prompt();
 		linesize = getline(&line, &buffsize, stdin);
 		if (linesize < 0)
@@ -42,9 +42,9 @@ int main(int ac, char **av, char *envp[])
 			perror(av[0]);
 		else
 			exec_command(pathcommand, command);
-		free_buffers(command);
+		/* free_buffers(command);
 		free_buffers(paths);
-		free(pathcommand);
+		free(pathcommand); */
 	}
 	if (linesize < 0 && flags.interactive)
 		write(STDERR_FILENO, "\n", 1);
