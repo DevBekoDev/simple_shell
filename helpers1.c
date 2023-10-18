@@ -13,6 +13,8 @@ int cmd_checker(char **cmd, char *buf)
 	else if (**cmd == '/')
 	{
 		exec_command(cmd[0], cmd);
+		free_buffers(cmd);
+		free(buf);
 		return (1);
 	}
 	return (0);
