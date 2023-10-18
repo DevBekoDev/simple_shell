@@ -38,5 +38,5 @@ void my_exit(char **command, char *line)
 {
 	free(line);
 	free_buffers(command);
-	exit(0);  
+	exit(0);
 }
