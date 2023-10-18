@@ -33,6 +33,9 @@ char **my_tokenizer(char *line)
 	}
 	/* Allocate memory for the array of tokens */
 	tokens = malloc(sizeof(char *) * (tokensize + 1));
+	/* Added */
+	if (tokens == NULL)
+		return (NULL);
 	token = strtok(buf, delim);
 	while (token)
 	{/* Duplicate the token and store it in the tokens array */
