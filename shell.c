@@ -23,6 +23,8 @@ int main(int ac, char **av, char *envp[])
 		free_buffers(paths);
 		free(pathcommand);
 		prompt();
+		/* Change code to test exit code */
+		exit(0);
 		linesize = getline(&line, &buffsize, stdin);
 		if (linesize < 0)
 			break;
