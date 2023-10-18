@@ -42,8 +42,6 @@ char **my_tokenizer(char *line)
 		index++;
 	} tokens[index] = '\0';
 	free(buf);
-	free(token);
-	free(bufp);
 	free(delim);
 	return (tokens);
 }
