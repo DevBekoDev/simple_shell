@@ -17,3 +17,13 @@ int cmd_checker(char **cmd, char *buf)
 	}
 	return (0);
 }
+/**
+ * handle_ctrl_c - test
+ * @signo: test
+ */
+void handle_ctrl_c(int signo)
+{
+	(void)signo;
+	_putchar('\n');
+	exit(EXIT_SUCCESS);
+}

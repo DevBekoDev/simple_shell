@@ -11,7 +11,10 @@
 #include <sys/stat.h>
 #include <stdbool.h>
 #include <time.h>
-int _puthcar(char c);
+
+void handle_ctrl_c(int signo);
+
+int _putchar(char c);
 int _printf(char *s);
 void prompt(void);
 void user_input(char *command, size_t size);
