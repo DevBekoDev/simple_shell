@@ -38,13 +38,18 @@ int main(int ac, char **av, char *envp[])
 		if (!pathcommand)
 			perror(av[0]);
 		else
+		{
 			exec_command(pathcommand, command);
-		free(command);
-		free(pathcommand);
-		free(paths);
+			free_buffers(command);
+			free_buffers(paths);
+			free(pathcommand);
+		}
 	}
 	if (linesize < 0 && flags.interactive)
 		write(STDERR_FILENO, "\n", 1);
+	free_buffers(command);
+	free_buffers(paths);
+	free(pathcommand);
 	free(line);
 	return (0);
 }
