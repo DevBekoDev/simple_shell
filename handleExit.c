@@ -8,24 +8,14 @@
 
 int _str_cmp(const char *s1, const char *s2)
 {
-	while (*s1 != '\0' && *s2 != '\0')
-	{
-		if (*s1 != *s2)
-		{
-			if (*s1 > *s2)
-				return (1);
-			else
-				return (-1);
-		}
-		s1++;
-		s2++;
-	}
-	if (*s1 == '\0' && *s2 != '\0')
-		return (-1);
-	else if (*s1 != '\0' && *s2 == '\0')
-		return (1);
-	else
-		return (0);
+	int i = 0, output;
+
+	while (*(s1 + i) == *(s2 + i) && *(s1 + i) != '\0')
+		i++;
+
+	output = (*(s1 + i) - *(s2 + i));
+
+	return (output);
 }
 
 /**
