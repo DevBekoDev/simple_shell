@@ -26,7 +26,7 @@ int _str_cmp(char *s1, char *s2)
 */
 void my_exit(char **command, char *line)
 {
-	(void)line;
-	(void)command;
+	free(line);
+	free_buffers(command);
 	exit(0);
 }
