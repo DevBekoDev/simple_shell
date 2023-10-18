@@ -1,15 +1,16 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <stddef.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include <unistd.h>
 #include <sys/types.h>
-#include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
+#include <stdbool.h>
+#include <time.h>
 int _puthcar(char c);
 int _printf(char *s);
 void prompt(void);
@@ -38,7 +39,7 @@ char *get_path(void);
  */
 struct flags
 {
-	int interactive;
+	bool interactive;
 } flags;
 
 /**
@@ -50,7 +51,7 @@ struct builtins
 {
 	char *env;
 	char *exit;
-};
+} builtins;
 /**
  * struct cond - condition of the shell
  * @final_exit: shell exit
