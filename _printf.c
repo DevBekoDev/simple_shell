@@ -14,7 +14,7 @@ int _putchar(char c)
 
 /**
  * _printf - a function to print things
- * @string: valuse entered
+ * @s: valuse entered
  * Return: void
  */
 
