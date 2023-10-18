@@ -28,8 +28,6 @@ char **my_tokenizer(char *line)
 		bufp++;
 	}
 	tokens = malloc(sizeof(char *) * (tokensize + 1));
-	if (tokens == NULL)
-		return (NULL);
 	token = strtok(buf, delim);
 	while (token)
 	{/* Duplicate the token and store it in the tokens array */
@@ -38,9 +36,11 @@ char **my_tokenizer(char *line)
 		{
 			free(tokens);
 			return (NULL);
-		} token = strtok(NULL, delim);
+		}
+		token = strtok(NULL, delim);
 		index++;
-	} tokens[index] = '\0';
+	}
+	tokens[index] = '\0';
 	free(buf);
 	return (tokens);
 }

@@ -18,14 +18,15 @@ int _putchar(char c)
  * Return: void
  */
 
-void _printf(char *string)
+int _printf(char *s)
 {
 	int i = 0;
 
-	for (; string[i] != '\0'; i++)
+	while (s[i] != '\0')
 	{
-		_putchar(string[i]);
+		_putchar(s[i]);
+		i++;
 	}
+
+	return (i);
 }
-
-
