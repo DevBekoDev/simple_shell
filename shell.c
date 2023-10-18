@@ -17,7 +17,7 @@ int main(int ac, char **av, char *envp[])
 	if (ac < 1)
 		return (-1);
 	signal(SIGINT, mode_handler);
-	signal(SIGINT, handle_ctrl_c);
+	/*signal(SIGINT, handle_ctrl_c);*/
 	while (1)
 	{
 		free_buffers(command);

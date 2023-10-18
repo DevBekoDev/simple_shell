@@ -10,11 +10,9 @@ int cmd_checker(char **cmd, char *buf)
 {
 	if (my_builtins(cmd, buf))
 		return (1);
-	else if (**cmd == '/')
+	else if (**cmd == '/' || '.')
 	{
 		exec_command(cmd[0], cmd);
-		free_buffers(cmd);
-		free(buf);
 		return (1);
 	}
 	return (0);
