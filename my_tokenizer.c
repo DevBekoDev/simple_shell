@@ -18,7 +18,6 @@ char **my_tokenizer(char *line)
 	if (!buf)
 		return (NULL);
 	bufp = buf;
-
 	/* Count the number of tokens in the line */
 	while (*bufp)
 	{
@@ -31,9 +30,7 @@ char **my_tokenizer(char *line)
 			flag = 0;
 		bufp++;
 	}
-	/* Allocate memory for the array of tokens */
 	tokens = malloc(sizeof(char *) * (tokensize + 1));
-	/* Added */
 	if (tokens == NULL)
 		return (NULL);
 	token = strtok(buf, delim);
