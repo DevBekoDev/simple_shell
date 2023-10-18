@@ -21,9 +21,5 @@ int my_builtins(char **command, char *line)
 		my_exit(command, line);
 		return (1);
 	}
-	else if (signal(SIGINT, handle_ctrl_c) == SIG_ERR)
-	{
-		exit(EXIT_SUCCESS);
-	}
 	return (0);
 }
