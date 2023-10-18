@@ -15,14 +15,12 @@ int my_builtins(char **command, char *line)
 	{
 		handle_env();
 		free(line);
-		free_buffers(command);
 		return (1);
 	}
 	else if (_str_cmp(*command, builtins.exit) == 0)
 	{
 		my_exit(command, line);
 		free(line);
-		free_buffers(command);
 		return (1);
 	}
 	return (0);
