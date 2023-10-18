@@ -29,7 +29,6 @@ int main(int ac, char **av, char *envp[])
 		cond.ln_count++;
 		if (line[linesize - 1] == '\n')
 			line[linesize - 1] = '\0';
-		return (EXIT_SUCCESS);
 		command = my_tokenizer(line);
 		if (command == NULL || *command == NULL || **command == '\0')
 			continue;
