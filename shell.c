@@ -20,9 +20,6 @@ int main(int ac, char **av, char *envp[])
 	signal(SIGINT, handle_ctrl_c);
 	while (1)
 	{
-		/*free_buffers(command);
-		free_buffers(paths);
-		free(pathcommand);*/
 		prompt();
 		linesize = getline(&line, &buffsize, stdin);
 		if (linesize < 0)
@@ -39,16 +36,12 @@ int main(int ac, char **av, char *envp[])
 		paths = my_tokenizer(path);
 		pathcommand = confirm_path(paths, command[0]);
 		if (!pathcommand)
-		{
 			perror(av[0]);
-		}	
 		else
-		{
 			exec_command(pathcommand, command);
-			free_buffers(command);
-			free_buffers(paths);
-			free(pathcommand);
-		}
+		free(command);
+		free(pathcommand);
+		free(paths);
 	}
 	if (linesize < 0 && flags.interactive)
 		write(STDERR_FILENO, "\n", 1);
