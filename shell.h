@@ -22,7 +22,7 @@ int cmd_checker(char **cmd, char *buf);
 void mode_handler(int s);
 char **parse_args(char *command);
 char *printError(void);
-int _str_cmp(const char *s1, const char *s2);
+int _str_cmp(char *s1, char *s2);
 char **my_tokenizer(char *line);
 int _strlen(char *s);
 void handle_env(void);

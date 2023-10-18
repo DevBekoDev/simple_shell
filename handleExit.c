@@ -6,7 +6,7 @@
  * Return: int
  */
 
-int _str_cmp(const char *s1, const char *s2)
+int _str_cmp(char *s1, char *s2)
 {
 	int i = 0, output;
 
