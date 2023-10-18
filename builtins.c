@@ -14,13 +14,11 @@ int my_builtins(char **command, char *line)
 	if (_str_cmp(*command, builtins.env) == 0)
 	{
 		handle_env();
-		free(line);
 		return (1);
 	}
 	else if (_str_cmp(*command, builtins.exit) == 0)
 	{
 		my_exit(command, line);
-		free(line);
 		return (1);
 	}
 	return (0);
