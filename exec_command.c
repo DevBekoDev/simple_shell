@@ -19,8 +19,6 @@ void exec_command(char *cp, char **cmd)
 	{
 		execve(cp, cmd, env);
 		perror(cp);
-		/* free(cp); */
-		/* free_buffers(cmd); */
 		exit(98);
 	}
 	else
