@@ -45,9 +45,5 @@ int main(int ac, char **av, char *envp[])
 	if (linesize < 0 && flags.interactive)
 		write(STDERR_FILENO, "\n", 1);
 	free(line);
-	free(command);
-	free(pathcommand);
-	free(paths);
-	free(path);
 	return (0);
 }
