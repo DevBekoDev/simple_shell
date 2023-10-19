@@ -36,6 +36,8 @@ char *_strdup(char *s);
 char *_strchr(char *s, char c);
 char *confirm_path(char **path, char *command);
 char *get_path(void);
+
+
 /**
  * struct flags - handle flags
  * @interactive: mode of the shell

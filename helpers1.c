@@ -8,6 +8,7 @@
  */
 int cmd_checker(char **cmd, char *buf)
 {
+	(void)buf;
 	if (my_builtins(cmd, buf))
 		return (1);
 	else if (**cmd == '/' || '.')
